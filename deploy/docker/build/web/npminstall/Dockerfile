@@ -4,5 +4,9 @@ MAINTAINER  weareadaptive <thibault@weareadaptive.com>
 COPY        client /client
 
 WORKDIR     /client
-ENTRYPOINT  npm install && npm run build
+
+RUN         npm install
+
+ENTRYPOINT  ["npm", "run", "build"]
+
 # ENTRYPOINT  npm install && npm test && npm run deploy:prod
